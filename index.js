@@ -10,7 +10,9 @@ require('@babel/register')({
 const ReferralEmail = require('./emails/ReferralEmail.jsx').default;
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://accredianfront.netlify.app/',
+}));
 const prisma = new PrismaClient();
 
 app.use(bodyParser.json());
